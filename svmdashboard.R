@@ -25,7 +25,7 @@ ui <- dashboardPage(
       menuItem("Tune SVM", tabName = "tunesvm", icon = icon("th")),
       menuItem("Acerca de", tabName = "acerca", icon = icon("info-sign", lib="glyphicon")),
       menuItem("Código fuente", icon = icon("github"),
-               href = "https://github.com/axelmora/svmdashboard/svmdashboard.R"
+               href = "https://github.com/axelmora/svmdashboard/blob/master/svmdashboard.R"
       ),
       menuItem("LinkedIn", icon = icon("linkedin"),
                href = "https://linkedin.com/in/axelmora"
@@ -127,7 +127,22 @@ ui <- dashboardPage(
                 )
               ),
       tabItem(tabName = "acerca",
-              h2("Acerca de"))
+              h2("Acerca de"),
+              h4("Aplicacion de SVM v 5.0"),
+              p("Esta es una sencilla shiny app que implementa SVM (libreria 'e1071') en un dataset.
+                Por defecto, trabaja con un data frame de 3000 observaciones 
+                creados por R y clasificados en 3 clasess. 
+                Puede optar por la opcion de usar un archivo CSV e importarlo en la aplicacion.
+                Del total de datos, especifique una submuestra para el entrenamiento y especifique las
+                variables x, y la discriminante en el panel Datos, donde además se muestra el datset original
+                en una tabla. 
+                En el panel SVM, seleccione el tipo de kernel y en base a eso configure los parametros necesarios. 
+                Se muestra la tabla de confusion, el resumen del modelo, el porcentaje correctamente clasificado 
+                segun la prediccion y el total de vectores soporte, además de la gráfica del modelo creado.
+                Puede consultar el modelo óptimo dado un kernel mediante la función best.tune en el panel Tune SVM."
+                ),
+              p("Basada en ejemplos y la documentacion de RStudio Shiny")        
+      )
     )
   )
 )
