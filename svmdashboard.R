@@ -7,7 +7,7 @@ library(rbokeh)
 library(shinyjs)
 library(shinythemes)
 library(DT)
-rsconnect::writeManifest()
+
 
 #Generacion del data frame de 3000 registros divididos equitativamente en 3 clases
 x=c(rnorm(1000,1000,100),rnorm(1000,2000,200),rnorm(1000,3000,400))
